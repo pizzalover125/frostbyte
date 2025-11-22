@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frostbyte</title>
+    <link rel="icon" type="image/svg+xml" href="frostbyte-favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="hero">
+      <div class="parallax-container">
+        <div class="parallax-layer back-layer">
+          <img src="back.svg" alt="Background Layer" class="parallax-image" />
+        </div>
+        <div class="parallax-layer middle-layer">
+          <img src="middle.svg" alt="Middle Layer" class="parallax-image" />
+        </div>
+        <div class="parallax-layer front-layer">
+          <img src="front.svg" alt="Front Layer" class="parallax-image" />
+        </div>
+        <canvas id="snow-canvas" class="snow-canvas"></canvas>
+        <div class="logo-container">
+          <img src="frostbyte-logo.svg" alt="FrostByte Logo" class="logo" />
+        </div>
+      </div>
+      <div class="hero-content">
+        <a
+          href="https://tally.so/r/zxXg0Z"
+          class="cta-button"
+          style="color: white; text-decoration: none"
+          >Register Now</a
+        >
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <h2 class="section-title">About FrostByte</h2>
+        <p class="section-description">
+          Join us for 16 hours of innovation, collaboration, and creation.
+          Frostbyte is where brilliant minds come together to build the future.
+        </p>
+        <p class="section-description" style="margin-top: 2rem">
+          This hackathon is organized by The Code Hatch.
+          <a
+            href="https://codehatch.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--light-blue); text-decoration: underline"
+            >Read more at codehatch.org</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <section class="schedule">
+      <div class="container">
+        <h2 class="section-title">Schedule</h2>
+        <div class="schedule-grid">
+          <div class="schedule-item">
+            <div class="time">TBD</div>
+            <div class="event-details">
+              <h3>Sometime in January</h3>
+              <p>Stay tuned for more details!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sponsors">
+      <div class="container">
+        <h2 class="section-title">Our Sponsors</h2>
+        <div class="sponsor-logos-wrapper">
+          <img src="https://assets.hackclub.com/flag-standalone.svg" />
+          <img
+            src="https://enrollbasis.com/wp-content/uploads/2023/09/BASIS-Charter-Schools.png"
+          />
+          <img
+            src="https://www.ezamu.com/wp-content/uploads/2025/08/ezamu-1.png"
+          />
+          <img
+            src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/8433546a0e6b3644f24f6e377ca0b62a1230fead_image.png"
+          />
+          <img
+            src="https://aspiringyouth.org/wp-content/uploads/2023/11/cropped-Untitled-1.png"
+          />
+          <img
+            src="https://brandguide.asu.edu/modules/webspark/asu_brand/node_modules/@asu/component-header-footer/dist/assets/img/arizona-state-university-logo-vertical.png"
+          />
+        </div>
+        <p class="section-description" style="margin-top: 3rem">
+          Interested in sponsoring the event?
+          <a
+            href="https://hcb.hackclub.com/donations/start/thecodehatch"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--light-blue); text-decoration: underline"
+            >Donate today</a
+          >! Any questions? Email the.code.hatch@gmail.com
+        </p>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Who can participate?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Anyone aged 13-18 with a passion for coding or technology, or
+                anyone who wants to learn! All skill levels are welcome!
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What should I bring?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Bring your laptop, charger, and lots of enthusiasm!</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is there a participation fee?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No! FrostByte is completely free for all participants.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>I have more questions</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Contact us at the.code.hatch@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 The Code Hatch. For teenagers, by teenagers.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

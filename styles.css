@@ -1,0 +1,436 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #1e3a8a;
+  --secondary-blue: #3b82f6;
+  --light-blue: #60a5fa;
+  --dark-blue: #0f172a;
+  --ice-blue: #dbeafe;
+  --white: #ffffff;
+  --gray: #64748b;
+  --light-gray: #f1f5f9;
+}
+
+body {
+  font-family: "Press Start 2P", "Courier New", "Courier", monospace;
+  background: linear-gradient(to bottom, var(--dark-blue), #1e293b);
+  color: var(--white);
+  overflow-x: hidden;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.parallax-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parallax-image {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  opacity: 0.6;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  transform: scale(1.15);
+}
+
+.back-layer {
+  z-index: 1;
+}
+
+.middle-layer {
+  z-index: 2;
+}
+
+.front-layer {
+  z-index: 3;
+}
+
+.logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+}
+
+.logo {
+  width: min(90vw, 1400px);
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 0 30px rgba(96, 165, 250, 0.3))
+    drop-shadow(0 0 60px rgba(96, 165, 250, 0.2));
+}
+
+.logo-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% + 300px);
+  height: calc(100% + 300px);
+  background: radial-gradient(
+    circle at center,
+    rgba(96, 165, 250, 0.25),
+    rgba(96, 165, 250, 0.15) 30%,
+    rgba(96, 165, 250, 0.075) 50%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  z-index: 3;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.snow-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  image-rendering: pixelated;
+  opacity: 0.9;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  margin-top: 400px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--light-blue);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--ice-blue);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background: var(--secondary-blue);
+  color: var(--white);
+  border: 4px solid var(--light-blue);
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  font-family: "Courier New", "Courier", monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta-button:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--light-blue);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--ice-blue);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.about {
+  background: rgba(26, 74, 145, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.schedule {
+  background: rgba(93, 156, 214, 0.08);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.schedule-item {
+  background: rgba(59, 130, 246, 0.1);
+  border: 4px solid rgba(96, 165, 250, 0.5);
+  border-radius: 0;
+  padding: 2rem;
+  transition: all 0.1s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.schedule-item:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  border-color: var(--light-blue);
+}
+
+.time {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light-blue);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.event-details h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+
+.event-details p {
+  color: var(--ice-blue);
+  line-height: 1.6;
+}
+
+.sponsors {
+  background: rgba(52, 117, 191, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.sponsors .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.sponsor-logos-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sponsor-logos-wrapper img {
+  width: 240px;
+  height: 160px;
+  object-fit: contain;
+  background: rgba(59, 130, 246, 0.1);
+  border: 4px solid rgba(96, 165, 250, 0.5);
+  border-radius: 0;
+  padding: 1rem;
+  transition: all 0.1s ease;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.3);
+  image-rendering: auto;
+}
+
+.sponsor-logos-wrapper img:hover {
+  transform: translate(3px, 3px);
+  border-color: var(--light-blue);
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.faq {
+  background: rgba(26, 74, 145, 0.08);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.faq-item {
+  background: rgba(59, 130, 246, 0.1);
+  border: 4px solid rgba(96, 165, 250, 0.5);
+  border-radius: 0;
+  transition: all 0.1s ease;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.faq-item:hover {
+  border-color: var(--light-blue);
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 2rem;
+  font-size: 1.3rem;
+  color: var(--light-blue);
+  font-family: "Courier New", "Courier", monospace;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.1s ease;
+}
+
+.faq-question:hover {
+  color: var(--white);
+}
+
+.faq-icon {
+  font-size: 2rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 2rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.faq-answer p {
+  color: var(--ice-blue);
+  line-height: 1.6;
+}
+.footer {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.footer p {
+  color: var(--ice-blue);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-link {
+  color: var(--light-blue);
+  text-decoration: none;
+  transition: all 0.1s ease;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+.social-link:hover {
+  color: var(--white);
+  text-shadow: 2px 2px 0px rgba(96, 165, 250, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-logos-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsor-logos-wrapper img {
+    width: 180px;
+    height: 120px;
+    padding: 0.8rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* AZ NYPD */
